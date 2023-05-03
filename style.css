@@ -15,6 +15,10 @@ button{
     background-color: none;
 }
 
+.header--button{
+    display: none;
+}
+
 .header{
     display: flex;
     justify-content: space-between;
@@ -53,25 +57,26 @@ button{
 
 .article{
     background-color: #A3AF9E;
+    position: relative;
 }
 
 .article--carousel{
     display:flex;
     position: relative;
     justify-content: center;
+    overflow: hidden;
 }
 
 .article--carousel--container{
     display: flex;
     max-width: 100vw;
     max-height: 100vh;
-    overflow: hidden;
     background-color: #000;
+    overflow: hidden;
+
 }
 .article--carousel--container--img{
     object-fit: cover;
-    justify-self: flex-start;
-    align-self: center;
     max-width: 100%;
     height: auto;
     opacity: 70%;
@@ -148,7 +153,48 @@ button{
 }
 
 .footer{
+    height: 30vh;
+    display:grid;
     background-color: #3F4A3C;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0.1fr;
+    grid-template-areas: 
+    "redes contacto info"
+    "redes contacto franco";
+    column-gap: 5px;
+    row-gap: 5px;
+}
+
+.footer--redes{
+    display: flex;
+    flex-direction: column;
+    grid-area: redes;
+    justify-content: space-evenly;
+}
+
+.footer--contacto{
+    flex-direction: column;
+    display: flex;
+    grid-area:contacto;
+    justify-content: space-evenly;
+}
+
+.footer--info{
+    flex-direction: column;
+    display: flex;
+    grid-area: info;
+    justify-content: space-evenly;
+}
+
+.footer--franco{
+    flex-direction: column;
+    display: flex;
+    grid-area: franco;
+    justify-content: space-evenly;
+}
+
+.footer p, h3{
+    align-self: center;
 }
 
 
@@ -182,8 +228,8 @@ button{
 }
 
 .dot:hover{
-    background-color:#fff;
-    cursor:pointer;
+    background-color:#bbb;
+    cursor: pointer;
 }
 
 .carousel--text--button:hover{
@@ -192,6 +238,87 @@ button{
 
 }
 
+@keyframes fade {
+    0% {opacity: 0%;}
+    100% {opacity: 70%}
+}
 
 
+@media only screen and (max-width: 412px){
+    .nav{
+        display: none
+    }
+    .header--button{
+        display: initial;
+        color: #55E047;
+        background-color: #222;
+        font-size: 16px;
+        padding: 5px;
+    }
 
+    .header--title{
+        font-size: medium;
+    }
+
+    .header{
+        padding: 15px;
+        position: relative;
+        z-index: 150;
+    }
+
+    .article--carousel--container--img{
+        height: 100vh;
+        width: 100vw;
+        filter: blur(7px);
+        opacity: 50%;
+    }
+
+    .article--carousel--container--text{
+        width: 75%;
+        font-size: large;
+        top: 20%;
+        left: 0%;
+        right: 0%;
+        margin: auto;
+    }
+
+    .header--nav__hidden{
+        display:none;
+        position:absolute;
+        height:50vh;
+        z-index: 100;
+        top: 0;
+        background-color: #111;
+        width: 100vw;
+        font-size: 100%;
+    }
+    
+    .header--nav__hidden li{
+        margin: 10%;
+        padding: 2%
+    }
+
+    .header--nav__hidden a:visited{
+        color: #55E047;
+        text-decoration: none;
+    }
+
+    .header--nav__hidden :link{
+        color: #55E047;
+        text-decoration: none;
+    }
+
+    .header--nav__hidden a{
+        color: #55E047;
+    }
+
+    @keyframes menu {
+            from {transform: translateY(-100%);}
+            to {transform: translateY(0%);}
+    }
+
+    @keyframes menu-reverse {
+        from {transform: translateY(0%);}
+        to {transform: translateY(-100%);}
+}
+}
