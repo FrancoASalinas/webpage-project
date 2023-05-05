@@ -15,6 +15,10 @@ button{
     background-color: none;
 }
 
+.header--nav__hidden{
+    display:none;
+}
+
 .header--button{
     display: none;
 }
@@ -193,7 +197,7 @@ button{
     justify-content: space-evenly;
 }
 
-.footer p, h3{
+.footer a, h3{
     align-self: center;
 }
 
@@ -212,6 +216,10 @@ button{
 
 .nav a:hover{
     text-shadow: 0px 0px 2px #A3AF9E;
+}
+
+.header--nav :last-child:hover{
+    cursor:pointer
 }
 
 .arrow:hover{
@@ -238,13 +246,22 @@ button{
 
 }
 
+.footer a:visited{
+    color: #000;
+}
+
+.footer a:link{
+    color: #000;
+}
+
 @keyframes fade {
     0% {opacity: 0%;}
     100% {opacity: 70%}
 }
 
 
-@media only screen and (max-width: 412px){
+
+@media only screen and (max-width: 1069px){
     .nav{
         display: none
     }
@@ -274,12 +291,15 @@ button{
     }
 
     .article--carousel--container--text{
+        display:flex;
         width: 75%;
+        height: 100%;
         font-size: large;
         top: 20%;
         left: 0%;
         right: 0%;
         margin: auto;
+        flex-wrap: wrap;
     }
 
     .header--nav__hidden{
@@ -312,6 +332,14 @@ button{
         color: #55E047;
     }
 
+    .arrow:hover{
+        background-color: initial;
+    }
+
+    .arrow:active{
+        background-color: #55E047;
+    }
+
     @keyframes menu {
             from {transform: translateY(-100%);}
             to {transform: translateY(0%);}
@@ -322,3 +350,4 @@ button{
         to {transform: translateY(-100%);}
 }
 }
+

@@ -4,7 +4,9 @@ const dotButton = document.querySelectorAll('.dot');
 const wpLink = document.querySelector('.wp--link');
 const wpLinkMobile = document.querySelector('.wp--link__mobile');
 const barsButton = document.querySelector('.header--button');
-const headerMobile = document.querySelector('.header--nav__hidden')
+const headerMobile = document.querySelector('.header--nav__hidden');
+const header = document.querySelector('.header');
+
 
 
 class Carousel{
@@ -128,6 +130,7 @@ barsButton.addEventListener('click', ()=>{
     headerMobile.style.animation = 'menu-reverse 1s linear'
    }
 })
+
 
 
 
