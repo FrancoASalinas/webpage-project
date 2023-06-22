@@ -167,6 +167,7 @@ button{
     "redes contacto franco";
     column-gap: 5px;
     row-gap: 5px;
+    color: #aaa;
 }
 
 .footer--redes{
@@ -201,15 +202,20 @@ button{
     align-self: center;
 }
 
-
-
-
-.nav a:visited{
+.footer a:visited, a:link{
+    color: #aaa;
     text-decoration: none;
-    color: #55E047;
+
 }
 
-.nav a:link{
+footer a:hover{
+    text-decoration: underline;
+}
+
+
+
+
+.nav a:visited, a:link{
     text-decoration: none;
     color: #55E047;
 }
@@ -246,13 +252,7 @@ button{
 
 }
 
-.footer a:visited{
-    color: #000;
-}
 
-.footer a:link{
-    color: #000;
-}
 
 @keyframes fade {
     0% {opacity: 0%;}
